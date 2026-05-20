@@ -1,37 +1,16 @@
 # Coding Data Asset Research Tourism 🏖️📊
 
-Repositori ini berisi penelitian dan analisis data tentang aset coding dan tourism research menggunakan Jupyter Notebook.
+This repository contains research and data analysis on coding assets and tourism research using Jupyter Notebook.
 
-## 📋 Daftar Isi
+## 🎯 About the Research
 
-- [Tentang Proyek](#tentang-proyek)
-- [Fitur Utama](#fitur-utama)
-- [Struktur Repositori](#struktur-repositori)
-- [Instalasi](#instalasi)
-- [Cara Penggunaan](#cara-penggunaan)
-- [Dataset](#dataset)
-- [Analisis](#analisis)
-- [Hasil dan Temuan](#hasil-dan-temuan)
-- [Kontribusi](#kontribusi)
-- [Lisensi](#lisensi)
-- [Kontak](#kontak)
+This project is a multidisciplinary research initiative at the intersection of Natural Language Processing (NLP), data science, and sustainable tourism governance. Rather than relying on static lagging indicators, this repository serves as the computational backbone for predicting ecological tipping points in nature-based destinations. 
 
-## 🎯 Tentang Proyek
-
-Proyek ini adalah inisiatif penelitian yang menggabungkan aspek coding, data science, dan tourism research. Fokus utama adalah:
-
-- **Data Exploration**: Mengeksplorasi dan memahami karakteristik data tourism
-- **Data Analysis**: Melakukan analisis mendalam terhadap tren dan pola
-- **Data Visualization**: Membuat visualisasi yang informatif dan mudah dipahami
-- **Research Insights**: Memberikan insights yang berguna untuk pengembangan sektor tourism
-
-## ✨ Fitur Utama
-
-- 📊 **Analisis Data Komprehensif**: Menggunakan pandas, numpy, dan libraries data science lainnya
-- 📈 **Visualisasi Data**: Grafik dan chart interaktif dengan matplotlib, seaborn, dan plotly
-- 🔍 **Exploratory Data Analysis (EDA)**: Pemahaman mendalam tentang dataset
-- 🤖 **Predictive Modeling**: Model machine learning untuk forecasting (jika ada)
-- 📝 **Dokumentasi Lengkap**: Setiap notebook didokumentasikan dengan baik
+Our core focus areas include:
+- **Big Data Analytics & NLP:** Processing massive unstructured tourist feedback (`final_data_for_25_destinations_with_coordinates.zip`) using advanced transformer-based topic modeling (`BERTopic.ipynb`) to extract empirically grounded system variables.
+- **Complex Systems Modeling:** Mathematically operationalizing the "ecotourism paradox" by mapping socio-ecological interactions across seven distinct subsystems (e.g., Environmental Sanitation, Cultural Preservation, Local Economy).
+- **Scenario Simulation & Visualization:** Executing long-term behavioral projections to visualize the exact temporal gap between ecological degradation and physical overcrowding.
+- **Evidence-Based Governance:** Delivering predictive, data-driven policy interventions (such as dynamic pricing and vendor quotas) to ensure the long-term resilience of the tourism sector.
 
 ## 📂 Struktur Repositori
 
@@ -49,29 +28,30 @@ Coding_Data_Asset_Research_Tourism/
 ├── final_data_for_25_destinations_with_coordinates.zip                         # Dataset Files
 ```
 
-## 🚀 Instalasi
+## 🚀 How to Run the Notebooks
 
-### Prasyarat
-- Python 3.8 atau lebih tinggi
-- pip atau conda
+Since this repository consists entirely of Jupyter Notebooks (`.ipynb`) and datasets, no formal software installation is required. You can explore and reproduce the simulations using either a cloud-based environment or your local machine.
 
-### Langkah Instalasi
+### Option 1: Run in the Cloud (No Installation Required)
+This is the fastest way to explore the data without configuring your local environment.
+1. Download the specific `.ipynb` file and the dataset (`final_data_for_25_destinations_with_coordinates.zip`).
+2. Upload them to a cloud environment like [Google Colab](https://colab.research.google.com/).
+3. Install any missing packages directly in the first cell of the notebook (e.g., `!pip install bertopic`).
 
-1. **Clone Repositori**
+### Option 2: Local Execution (For Reproducibility)
+If you prefer to run the simulations locally, we highly recommend setting up a virtual environment. Complex NLP libraries (like BERTopic) require specific package versions to avoid dependency conflicts.
+
+1. **Clone The Repository**
    ```bash
    git clone https://github.com/marsasalsabila/Coding_Data_Asset_Research_Tourism.git
    cd Coding_Data_Asset_Research_Tourism
    ```
 
-2. **Buat Virtual Environment**
+2. **Create a Virtual Environment**
    ```bash
    # Menggunakan venv
    python -m venv env
-   source env/bin/activate  # Di Windows: env\Scripts\activate
-   
-   # Atau menggunakan conda
-   conda create --name tourism_research python=3.10
-   conda activate tourism_research
+   source env/bin/activate  # On Windows: env\Scripts\activate 
    ```
 
 3. **Install Dependencies**
@@ -79,122 +59,22 @@ Coding_Data_Asset_Research_Tourism/
    pip install -r requirements.txt
    ```
 
-4. **Buka Jupyter Notebook**
+4. **Launch Jupyter Notebook**
    ```bash
    jupyter notebook
    ```
 
-## 📖 Cara Penggunaan
+## 📊 Key Findings & Simulation Projections
+- **The Ecotourism Paradox & Degradation Pattern:** Simulations prove that the waste and ecological management crisis will emerge first in 2031, while physical carrying capacity will not be breached until 2038.
+- **The 7-Year Governance Window:** The time gap between the early indicators of environmental degradation (2031) and total physical overcrowding (2038) provides a critical window for policymakers to intervene before ecosystem damage becomes irreversible.
+- **Integrated Intervention Scenario:** The combination of strategic demarketing policies (dynamic ticket pricing), informal vendor quota restrictions (capped at 450 units), and an annual sanitation budget increase of 5% is mathematically proven to sustain the socio-ecological resilience of TNBTS through 2045.
 
-### Menjalankan Notebook
+## 📜 Data Availability Policy & License
+- **Source Code:** All source code in this repository is released under the MIT License.
+- **Annotated Data:** Document-topic matrices, AI prompt transcripts, and extracted variables are licensed under CC BY 4.0.
+- **Raw Corpora:** In accordance with Google Maps' Terms of Service, massive raw text reviews are not openly redistributed in this repository. However, anonymized reviews for academic reproduction purposes may be requested formally from the corresponding author.
 
-1. Navigasikan ke folder `notebooks/`
-2. Buka notebook sesuai urutan numerik (01, 02, 03, dst)
-3. Jalankan setiap cell dengan Shift + Enter
-4. Sesuaikan path data jika diperlukan
-
-### Contoh Penggunaan Kode
-
-```python
-import pandas as pd
-import matplotlib.pyplot as plt
-from src.analysis import analyze_data
-from src.visualization import create_plots
-
-# Load data
-df = pd.read_csv('data/raw/tourism_data.csv')
-
-# Analisis
-results = analyze_data(df)
-
-# Visualisasi
-create_plots(results)
-```
-
-## 📊 Dataset
-
-Proyek ini menggunakan dataset tentang:
-- **Sumber**: [Sebutkan sumber data]
-- **Ukuran**: [Jumlah baris dan kolom]
-- **Periode**: [Rentang waktu data]
-- **Variabel Utama**: 
-  - [Variabel 1]
-  - [Variabel 2]
-  - [Variabel 3]
-
-**Catatan**: Dataset tersimpan di folder `data/`. Jika Anda memiliki dataset besar, gunakan `.gitignore` untuk mengecualikannya dari version control.
-
-## 🔬 Analisis
-
-### Pertanyaan Penelitian
-
-1. **Pertanyaan 1**: [Sebutkan pertanyaan penelitian utama]
-2. **Pertanyaan 2**: [Sebutkan pertanyaan penelitian kedua]
-3. **Pertanyaan 3**: [Sebutkan pertanyaan penelitian ketiga]
-
-### Metodologi
-
-- **Teknik EDA**: Deskriptif statistik, distribusi data, korelasi
-- **Cleaning**: Handling missing values, outliers, dan duplicates
-- **Visualisasi**: Time series, heatmap, scatter plot, bar chart
-- **Analisis Statistik**: Hypothesis testing, correlation analysis
-
-## 📈 Hasil dan Temuan
-
-### Key Findings
-
-- **Insight 1**: [Deskripsi insight utama yang ditemukan]
-- **Insight 2**: [Deskripsi insight kedua]
-- **Insight 3**: [Deskripsi insight ketiga]
-
-### Visualisasi Utama
-
-Berikut adalah beberapa visualisasi penting dari analisis:
-- Chart 1: [Deskripsi]
-- Chart 2: [Deskripsi]
-- Chart 3: [Deskripsi]
-
-Lihat folder `output/figures/` untuk semua visualisasi.
-
-## 🤝 Kontribusi
-
-Kami menyambut kontribusi dari komunitas! Jika Anda ingin berkontribusi:
-
-1. Fork repositori ini
-2. Buat branch fitur (`git checkout -b feature/AmazingFeature`)
-3. Commit perubahan Anda (`git commit -m 'Add some AmazingFeature'`)
-4. Push ke branch (`git push origin feature/AmazingFeature`)
-5. Buka Pull Request
-
-### Guidelines Kontribusi
-- Tulis kode yang bersih dan mudah dipahami
-- Tambahkan dokumentasi yang jelas
-- Ikuti naming conventions yang konsisten
-- Sertakan unit tests jika memungkinkan
-
-## 📝 Lisensi
-
-Proyek ini dilisensikan di bawah [MIT License](LICENSE) - lihat file LICENSE untuk detail lebih lanjut.
-
-## 👤 Kontak
-
-**Author**: [Mara Salsabila](https://github.com/marsasalsabila)
-
-- 📧 Email: [Masukkan email Anda]
-- 🐙 GitHub: [@marsasalsabila](https://github.com/marsasalsabila)
-- 💼 LinkedIn: [Masukkan profil LinkedIn Anda]
-
-## 🙏 Ucapan Terima Kasih
-
-Terima kasih kepada:
-- Komunitas Python dan Data Science
-- Contributors yang telah membantu
-- [Sumber dataset/resources lainnya]
-
----
-
-**Last Updated**: 20 Mei 2026
-
-**Status**: ✅ Active Development
-
-*Jika Anda menemukan bug atau memiliki saran, silakan buat issue di [halaman issues](https://github.com/marsasalsabila/Coding_Data_Asset_Research_Tourism/issues).*
+## ✍️ Author Contributions (CRediT)
+- **Marsa Salsabila:** Conceptualization, Methodology, Software, Validation, Formal analysis, Investigation, Data curation, Writing — original draft, Visualization
+- **Dian Puteri Ramadhani:** Methodology, Validation, Writing — review and editing, Supervision.
+- **Andry Alamsyah:** Conceptualization, Methodology, Validation, Writing — review and editing, Supervision.
