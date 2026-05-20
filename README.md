@@ -63,6 +63,9 @@ If you prefer to run the simulations locally, we highly recommend setting up a v
    ```bash
    jupyter notebook
    ```
+## 🔗 Links
+- **Paper (On Publication Process):** [Read the Manuscript Draft Here](https://telkomuniversityofficial-my.sharepoint.com/:w:/g/personal/andrya_telkomuniversity_ac_id/IQCI7YBh4l_UQ4_3OtjorcuYAesqv4fWb_YzqlgHv9BReco?e=r0AGPM)
+- **GitHub Repository:** [Coding_Data_Asset_Research_Tourism](https://github.com/marsasalsabila/Coding_Data_Asset_Research_Tourism.git)
 
 ## 📊 Key Findings & Simulation Projections
 - **The Ecotourism Paradox & Degradation Pattern:** Simulations prove that the waste and ecological management crisis will emerge first in 2031, while physical carrying capacity will not be breached until 2038.
@@ -74,7 +77,21 @@ If you prefer to run the simulations locally, we highly recommend setting up a v
 - **Annotated Data:** Document-topic matrices, AI prompt transcripts, and extracted variables are licensed under CC BY 4.0.
 - **Raw Corpora:** In accordance with Google Maps' Terms of Service, massive raw text reviews are not openly redistributed in this repository. However, anonymized reviews for academic reproduction purposes may be requested formally from the corresponding author.
 
+## ⚖️ License
+This project is licensed under the MIT License. See the LICENSE file in this repository for full details.
+
 ## ✍️ Author Contributions (CRediT)
 - **Marsa Salsabila:** Conceptualization, Methodology, Software, Validation, Formal analysis, Investigation, Data curation, Writing — original draft, Visualization
 - **Dian Puteri Ramadhani:** Methodology, Validation, Writing — review and editing, Supervision.
 - **Andry Alamsyah:** Conceptualization, Methodology, Validation, Writing — review and editing, Supervision.
+
+## 📬 Contact
+For any inquiries regarding the code, data, or research findings, please feel free to reach out to the authors:
+- Marsa Salsabila: marsasalsabila@student.telkomuniversity.ac.id
+- Dian Puteri Ramadhani: dianpramadhani@telkomuniversity.ac.id
+- Andry Alamsyah (Corresponding Author): andrya@telkomuniversity.ac.id
+
+## 🙏 Acknowledgements
+- We would like to express our gratitude to Telkom University for the continuous support of this research initiative.
+- Special thanks to the open-source community, particularly the developers of BERTopic and the advanced Python libraries utilized in this study.
+- We also acknowledge the expert panel for their rigorous validation of the System Dynamics parameters.
