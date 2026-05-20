@@ -12,7 +12,7 @@ Our core focus areas include:
 - **Scenario Simulation & Visualization:** Executing long-term behavioral projections to visualize the exact temporal gap between ecological degradation and physical overcrowding.
 - **Evidence-Based Governance:** Delivering predictive, data-driven policy interventions (such as dynamic pricing and vendor quotas) to ensure the long-term resilience of the tourism sector.
 
-## 📂 Struktur Repositori
+## 📂 Repository Structure
 
 ```
 Coding_Data_Asset_Research_Tourism/
