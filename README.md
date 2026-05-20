@@ -38,30 +38,15 @@ Proyek ini adalah inisiatif penelitian yang menggabungkan aspek coding, data sci
 ```
 Coding_Data_Asset_Research_Tourism/
 │
-├── README.md                          # File dokumentasi utama (ini)
-├── requirements.txt                   # Dependency Python
-├── .gitignore                         # File yang diabaikan Git
-│
-├── notebooks/                         # Jupyter Notebooks
-│   ├── 01_data_collection.ipynb      # Pengumpulan data
-│   ├── 02_exploratory_analysis.ipynb # Analisis eksploratif
-│   ├── 03_data_cleaning.ipynb        # Pembersihan data
-│   ├── 04_visualization.ipynb        # Visualisasi data
-│   └── 05_statistical_analysis.ipynb # Analisis statistik
-│
-├── data/                              # Dataset (jika tidak sensitif)
-│   ├── raw/                          # Data mentah
-│   └── processed/                    # Data yang sudah diproses
-│
-├── output/                            # Hasil analisis
-│   ├── figures/                      # Grafik dan chart
-│   ├── reports/                      # Laporan
-│   └── models/                       # Model tersimpan
-│
-└── src/                               # Kode sumber
-    ├── utils.py                      # Utility functions
-    ├── analysis.py                   # Functions untuk analisis
-    └── visualization.py              # Functions untuk visualisasi
+├── BERTopic.ipynb                                                              # ipynb for BERTopic Processing
+├── Cultural_Preservation_Subsystem.ipynb                                       # ipynb for Cultural Prservation
+├── Economic_Subsystem_of_The_Local_Community_in_the_Tourism_Sector.ipynb       # ipynb for Local Economy Community Subsystem
+├── Environmental_Sanitation_Subsystem.ipynb                                    # ipynb for Sanitation Subsystem
+├── Tourism_Facilitites_Availibility_Subsystem.ipynb                            # ipynb for Facilities Availibility Subsystem
+├── Tourism_Revenue_Subsystem.ipynb                                             # ipynb for Revenue Subsystem
+├── Tourism_Services_Subsystem.ipynb                                            # ipynb for Services Subsystem
+├── Tourism_Population_Subsystem.ipynb                                          # ipynb for Tourism Population Subsystem
+├── final_data_for_25_destinations_with_coordinates.zip                         # Dataset Files
 ```
 
 ## 🚀 Instalasi
