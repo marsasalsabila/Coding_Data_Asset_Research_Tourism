@@ -32,7 +32,7 @@ The seven subsystem notebooks are **separate numerical implementations**. A conc
 
 ## Interpreting the scenario results
 
-The manuscripts's scenario values are conditional outputs, not independent empirical forecasts:
+The manuscript's scenario values are conditional outputs, not independent empirical forecasts:
 
 - **Cultural sustainability:** a modeled index crosses its assumed threshold of 60 around **2031** under business-as-usual.
 - **Operational visitor activity:** an assumed benchmark of approximately **2,752 visitors/day** is reached around **2039** in the reported business-as-usual scenario.
