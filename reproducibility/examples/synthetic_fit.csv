@@ -1,0 +1,5 @@
+subsystem,year,actual,predicted
+synthetic_A,2023,100,90
+synthetic_A,2024,200,220
+synthetic_B,2023,50,48
+synthetic_B,2024,60,61
