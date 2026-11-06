@@ -1,97 +1,77 @@
-# Coding Data Asset Research Tourism 🏖️📊
+# Coding Data Asset Research Tourism
 
-This repository contains research and data analysis on coding assets and tourism research using Jupyter Notebook.
+**Research code and supporting materials for _Language Models and System Dynamics for Overtourism_**
 
-## 🎯 About the Research
+This repository contains research assets for an exploratory study combining online tourist reviews, language-model-assisted conceptual mapping, and system dynamics scenario analysis. Causal loop and stock-and-flow diagrams were prepared using Vensim. Numerical simulations were implemented separately in Python through Google Colab.
 
-This project is a multidisciplinary research initiative at the intersection of Natural Language Processing (NLP), data science, and sustainable tourism governance. Rather than relying on static lagging indicators, this repository serves as the computational backbone for predicting ecological tipping points in nature-based destinations. 
+## Research scope
 
-Our core focus areas include:
-- **Big Data Analytics & NLP:** Processing massive unstructured tourist feedback (`final_data_for_25_destinations_with_coordinates.zip`) using advanced transformer-based topic modeling (`BERTopic.ipynb`) to extract empirically grounded system variables.
-- **Complex Systems Modeling:** Mathematically operationalizing the "ecotourism paradox" by mapping socio-ecological interactions across seven distinct subsystems (e.g., Environmental Sanitation, Cultural Preservation, Local Economy).
-- **Scenario Simulation & Visualization:** Executing long-term behavioral projections to visualize the exact temporal gap between ecological degradation and physical overcrowding.
-- **Evidence-Based Governance:** Delivering predictive, data-driven policy interventions (such as dynamic pricing and vendor quotas) to ensure the long-term resilience of the tourism sector.
+The study contains two analytically distinct components:
 
-## 📂 Repository Structure
+1. **Review analysis:** 100,162 assembled Google Maps review records from 25 Indonesian destination labels. An eight-keyword sustainability filter retained 9,469 texts for the reported BERTopic analysis, yielding twelve interpreted non-outlier topics.
+2. **Bromo scenario analysis:** Bromo Tengger Semeru National Park was used as an illustrative destination. Review themes informed 23 candidate variables and 26 hypothesized causal links. Institutional sources, literature, expert judgment, and explicit modeling assumptions supplied numerical inputs.
 
+Review-derived themes inform exploratory model conceptualization. They are not direct measurements of ecological conditions or numerical calibration series. The corpus is not a statistically representative survey of Indonesian destinations.
+
+## Existing notebooks
+
+These eight notebooks are retained at the repository root and are **not changed** by the reproducibility update:
+
+| Notebook | Research component |
+|---|---|
+| `BERTopic.ipynb` | Topic modeling of the review corpus |
+| `Tourist_Population_Subsystem.ipynb` | Visitor population and an operational reference benchmark |
+| `Environmental_Sanitation_Subsystem.ipynb` | Waste generation and sanitation handling |
+| `Tourism_Revenue_Subsystem.ipynb` | Tourism revenue and ticket-price settings |
+| `Tourism_Facilities_Availability_Subsystem.ipynb` | Facility investment and modeled capacity |
+| `Tourism_Services_Subsystem.ipynb` | Service quality and workforce training |
+| `Cultural_Preservation_Subsystem.ipynb` | Cultural sustainability and preservation |
+| `Economic_Subsystem_of_the_Local_Community_in_the_Tourism_Sector.ipynb` | Street vendors and local-economy outcomes |
+
+The seven subsystem notebooks are **separate numerical implementations**. A conceptual Vensim diagram does not in itself establish that all seven subsystems were solved as one integrated numerical system.
+
+## Interpreting the scenario results
+
+The manuscripts's scenario values are conditional outputs, not independent empirical forecasts:
+
+- **Cultural sustainability:** a modeled index crosses its assumed threshold of 60 around **2031** under business-as-usual.
+- **Operational visitor activity:** an assumed benchmark of approximately **2,752 visitors/day** is reached around **2039** in the reported business-as-usual scenario.
+- **Ecosystem health:** the separately discussed 80% reference threshold is an assumption, with no independently established crossing date.
+- Interventions compare specified settings for ticket pricing, sanitation, facilities, training, cultural preservation and vendor management. The comparison does not isolate the causal effect of each measure.
+
+The 2031 cultural-index date and the 2039 visitor benchmark measure **different constructs**. They must not be described as a confirmed seven-year ecological warning window. Numerical and plotted end dates should also be matched to their particular source revisions before reporting exact reproduction of figures.
+
+## Historical-fit reporting
+
+The manuscript reports mean absolute percentage error (MAPE) values for seven subsystems, with an unweighted mean of **6.45%**. The local-economy subsystem reports **15.60%**. Some 2023 simulated reference values were aligned with their baseline observations before these calculations. Consequently, the reported MAPE should not be treated as evidence of independently validated long-term forecasting accuracy.
+
+## Reproducibility tools
+
+The `reproducibility/` directory contains **additional supporting utilities**, not substitutes for the historical simulation notebooks. These include review filtering, MAPE calculation from supplied data, detection of modeled threshold crossings, CSV plotting, source-notebook inventory, and opt-in notebook execution.
+
+Install the lightweight tool requirements and run tests:
+
+```bash
+python -m pip install -r reproducibility/requirements.txt
+python -m unittest discover -s reproducibility/tests -v
 ```
-Coding_Data_Asset_Research_Tourism/
-│
-├── BERTopic.ipynb                                                              # ipynb for BERTopic Processing
-├── Cultural_Preservation_Subsystem.ipynb                                       # ipynb for Cultural Prservation
-├── Economic_Subsystem_of_The_Local_Community_in_the_Tourism_Sector.ipynb       # ipynb for Local Economy Community Subsystem
-├── Environmental_Sanitation_Subsystem.ipynb                                    # ipynb for Sanitation Subsystem
-├── Tourism_Facilitites_Availibility_Subsystem.ipynb                            # ipynb for Facilities Availibility Subsystem
-├── Tourism_Revenue_Subsystem.ipynb                                             # ipynb for Revenue Subsystem
-├── Tourism_Services_Subsystem.ipynb                                            # ipynb for Services Subsystem
-├── Tourism_Population_Subsystem.ipynb                                          # ipynb for Tourism Population Subsystem
-├── final_data_for_25_destinations_with_coordinates.zip                         # Dataset Files
-```
 
-## 🚀 How to Run the Notebooks
+For examples, commands, and interpretive limits, read [reproducibility/README.md](reproducibility/README.md). All CSV fixtures in `reproducibility/examples/` are synthetic and are **not historical Bromo measurements**.
 
-Since this repository consists entirely of Jupyter Notebooks (`.ipynb`) and datasets, no formal software installation is required. You can explore and reproduce the simulations using either a cloud-based environment or your local machine.
+## Data and reuse
 
-### Option 1: Run in the Cloud (No Installation Required)
-This is the fastest way to explore the data without configuring your local environment.
-1. Download the specific `.ipynb` file and the dataset (`final_data_for_25_destinations_with_coordinates.zip`).
-2. Upload them to a cloud environment like [Google Colab](https://colab.research.google.com/).
-3. Install any missing packages directly in the first cell of the notebook (e.g., `!pip install bertopic`).
+The repository already contains `final_data_for_25_destinations_with_coordinates.zip`. The contents and source-platform terms should be reviewed before redistribution. A publicly hosted dataset does not necessarily carry unrestricted permission to republish third-party review text.
 
-### Option 2: Local Execution (For Reproducibility)
-If you prefer to run the simulations locally, we highly recommend setting up a virtual environment. Complex NLP libraries (like BERTopic) require specific package versions to avoid dependency conflicts.
+Software is subject to this repository's `LICENSE`. Additional claims about the licensing of raw reviews, prompt transcripts, or annotations require confirmation that the relevant rights are held by the authors.
 
-1. **Clone The Repository**
-   ```bash
-   git clone https://github.com/marsasalsabila/Coding_Data_Asset_Research_Tourism.git
-   cd Coding_Data_Asset_Research_Tourism
-   ```
+## Manuscript
 
-2. **Create a Virtual Environment**
-   ```bash
-   # Menggunakan venv
-   python -m venv env
-   source env/bin/activate  # On Windows: env\Scripts\activate 
-   ```
+_**Language Models and System Dynamics for Overtourism**_, manuscript ANNALE-D-26-00377, submitted to _Annals of Tourism Research Empirical Insights_. Publication metadata and DOI may be added after publication.
 
-3. **Install Dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
+## Authors
 
-4. **Launch Jupyter Notebook**
-   ```bash
-   jupyter notebook
-   ```
-## 🔗 Links
-- **Paper (On Publication Process):** [Read the Manuscript Draft Here](https://telkomuniversityofficial-my.sharepoint.com/:w:/g/personal/andrya_telkomuniversity_ac_id/IQCI7YBh4l_UQ4_3OtjorcuYAesqv4fWb_YzqlgHv9BReco?e=r0AGPM)
-- **GitHub Repository:** [Coding_Data_Asset_Research_Tourism](https://github.com/marsasalsabila/Coding_Data_Asset_Research_Tourism.git)
+- **Marsa Salsabila:** Conceptualization, methodology, software, validation, formal analysis, investigation, data curation, writing original draft, visualization.
+- **Dian Puteri Ramadhani:** Methodology, validation, writing review and editing, supervision.
+- **Andry Alamsyah:** Conceptualization, methodology, validation, writing review and editing, supervision.
 
-## 📊 Key Findings & Simulation Projections
-- **The Ecotourism Paradox & Degradation Pattern:** Simulations prove that the waste and ecological management crisis will emerge first in 2031, while physical carrying capacity will not be breached until 2038.
-- **The 7-Year Governance Window:** The time gap between the early indicators of environmental degradation (2031) and total physical overcrowding (2038) provides a critical window for policymakers to intervene before ecosystem damage becomes irreversible.
-- **Integrated Intervention Scenario:** The combination of strategic demarketing policies (dynamic ticket pricing), informal vendor quota restrictions (capped at 450 units), and an annual sanitation budget increase of 5% is mathematically proven to sustain the socio-ecological resilience of TNBTS through 2045.
-
-## 📜 Data Availability Policy & License
-- **Source Code:** All source code in this repository is released under the MIT License.
-- **Annotated Data:** Document-topic matrices, AI prompt transcripts, and extracted variables are licensed under CC BY 4.0.
-- **Raw Corpora:** In accordance with Google Maps' Terms of Service, massive raw text reviews are not openly redistributed in this repository. However, anonymized reviews for academic reproduction purposes may be requested formally from the corresponding author.
-
-## ⚖️ License
-This project is licensed under the MIT License. See the LICENSE file in this repository for full details.
-
-## ✍️ Author Contributions (CRediT)
-- **Marsa Salsabila:** Conceptualization, Methodology, Software, Validation, Formal analysis, Investigation, Data curation, Writing — original draft, Visualization
-- **Dian Puteri Ramadhani:** Methodology, Validation, Writing — review and editing, Supervision.
-- **Andry Alamsyah:** Conceptualization, Methodology, Validation, Writing — review and editing, Supervision.
-
-## 📬 Contact
-For any inquiries regarding the code, data, or research findings, please feel free to reach out to the authors:
-- Marsa Salsabila: marsasalsabila@student.telkomuniversity.ac.id
-- Dian Puteri Ramadhani: dianpramadhani@telkomuniversity.ac.id
-- Andry Alamsyah (Corresponding Author): andrya@telkomuniversity.ac.id
-
-## 🙏 Acknowledgements
-- We would like to express our gratitude to Telkom University for the continuous support of this research initiative.
-- Special thanks to the open-source community, particularly the developers of BERTopic and the advanced Python libraries utilized in this study.
-- We also acknowledge the expert panel for their rigorous validation of the System Dynamics parameters.
+The authors acknowledge Telkom University, participating experts, and developers of the open-source tools used in this research.
