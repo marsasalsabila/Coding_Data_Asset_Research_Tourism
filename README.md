@@ -74,7 +74,7 @@ The practical contribution is **multidimensional monitoring and scenario-informe
 
 The workflow links *three different kinds of reasoning* without presenting them as interchangeable evidence.
 
-\`\`\`mermaid
+```mermaid
 flowchart TD
     A["100,162 reviews<br/>25 Indonesian destination labels"] --> B["Indonesian text processing<br/>8 sustainability keyword filters"]
     B --> C["9,469 selected texts"]
@@ -93,7 +93,7 @@ flowchart TD
     class A,B,C,D text
     class E,F,G,H,I,J model
     class K,L outcome
-\`\`\`
+```
 
 1. **Listen to visitor experiences:** organize review text with a documented sustainability-keyword selection and BERTopic.
 2. **Develop conceptual hypotheses:** interpret twelve topics and propose system variables and causal links with language-model assistance and researcher review.
@@ -134,14 +134,14 @@ This is the existing research repository, with the original notebooks preserved 
 
 | Research asset | Open notebook | What it covers |
 |---|---|---|
-| Topic modeling | [\`BERTopic.ipynb\`](BERTopic.ipynb) | Review-based topic discovery |
-| Visitor activity | [\`Tourist_Population_Subsystem.ipynb\`](Tourist_Population_Subsystem.ipynb) | Visitor trajectories, pricing assumptions, operational benchmark |
-| Waste management | [\`Environmental_Sanitation_Subsystem.ipynb\`](Environmental_Sanitation_Subsystem.ipynb) | Waste generation and sanitation handling |
-| Tourism revenue | [\`Tourism_Revenue_Subsystem.ipynb\`](Tourism_Revenue_Subsystem.ipynb) | Revenue trajectories and admission pricing |
-| Facilities | [\`Tourism_Facilities_Availability_Subsystem.ipynb\`](Tourism_Facilities_Availability_Subsystem.ipynb) | Facility investment and modeled capacity |
-| Service quality | [\`Tourism_Services_Subsystem.ipynb\`](Tourism_Services_Subsystem.ipynb) | Service quality and training |
-| Cultural preservation | [\`Cultural_Preservation_Subsystem.ipynb\`](Cultural_Preservation_Subsystem.ipynb) | Cultural-sustainability index |
-| Local economy | [\`Economic_Subsystem_of_the_Local_Community_in_the_Tourism_Sector.ipynb\`](Economic_Subsystem_of_the_Local_Community_in_the_Tourism_Sector.ipynb) | Informal vendors and modeled income |
+| Topic modeling | [`BERTopic.ipynb`](BERTopic.ipynb) | Review-based topic discovery |
+| Visitor activity | [`Tourist_Population_Subsystem.ipynb`](Tourist_Population_Subsystem.ipynb) | Visitor trajectories, pricing assumptions, operational benchmark |
+| Waste management | [`Environmental_Sanitation_Subsystem.ipynb`](Environmental_Sanitation_Subsystem.ipynb) | Waste generation and sanitation handling |
+| Tourism revenue | [`Tourism_Revenue_Subsystem.ipynb`](Tourism_Revenue_Subsystem.ipynb) | Revenue trajectories and admission pricing |
+| Facilities | [`Tourism_Facilities_Availability_Subsystem.ipynb`](Tourism_Facilities_Availability_Subsystem.ipynb) | Facility investment and modeled capacity |
+| Service quality | [`Tourism_Services_Subsystem.ipynb`](Tourism_Services_Subsystem.ipynb) | Service quality and training |
+| Cultural preservation | [`Cultural_Preservation_Subsystem.ipynb`](Cultural_Preservation_Subsystem.ipynb) | Cultural-sustainability index |
+| Local economy | [`Economic_Subsystem_of_the_Local_Community_in_the_Tourism_Sector.ipynb`](Economic_Subsystem_of_the_Local_Community_in_the_Tourism_Sector.ipynb) | Informal vendors and modeled income |
 
 **Supporting materials**
 
@@ -159,39 +159,39 @@ The Vensim figures are **conceptual model diagrams**. The seven Python notebooks
 Use **Google Colab** or **Kaggle Notebooks** to inspect the source code. Some original cells contain Colab-specific imports, local output paths, or assumptions about input files, so a notebook may require environment adjustments before running in Kaggle.
 
 1. Download or clone the repository.
-2. Open \`BERTopic.ipynb\` or a specific subsystem notebook.
+2. Open `BERTopic.ipynb` or a specific subsystem notebook.
 3. Read the parameter and input-data cells before execution.
 4. Provide only review data you are entitled to use.
 5. Record your environment, input version, source commit, and any code changes.
 6. Compare calculated outputs with the corresponding manuscript figure before claiming exact reproduction.
 
-\`\`\`bash
+```bash
 git clone https://github.com/marsasalsabila/Coding_Data_Asset_Research_Tourism.git
 cd Coding_Data_Asset_Research_Tourism
-\`\`\`
+```
 
 ### Run the additional reproducibility utilities
 
 These tools check selected calculations or process **your own supplied input files**. They do not replace the original research notebooks.
 
-\`\`\`bash
+```bash
 python -m pip install -r reproducibility/requirements.txt
 python -m unittest discover -s reproducibility/tests -v
-\`\`\`
+```
 
 For example, compute error metrics from supplied paired data:
 
-\`\`\`bash
+```bash
 python reproducibility/scripts/compute_mape.py reproducibility/examples/synthetic_fit.csv
-\`\`\`
+```
 
 Or inspect first modeled threshold crossings from a CSV export:
 
-\`\`\`bash
+```bash
 python reproducibility/scripts/find_crossings.py \
   reproducibility/examples/synthetic_visitor_daily.csv \
   --value-column visitors --threshold 2752
-\`\`\`
+```
 
 **The example CSV files are synthetic teaching fixtures**, not observations from Bromo and not the basis for the published results.
 
@@ -236,7 +236,7 @@ The authors acknowledge Telkom University, the participating experts, and the op
 
 ## 🔐 Data ethics and reuse
 
-The repository includes \`final_data_for_25_destinations_with_coordinates.zip\`. **Review-text sharing and reuse remain subject to source-platform terms, permissions, and privacy considerations.** Do not interpret public access to the archive as unrestricted permission to redistribute third-party content.
+The repository includes `final_data_for_25_destinations_with_coordinates.zip`. **Review-text sharing and reuse remain subject to source-platform terms, permissions, and privacy considerations.** Do not interpret public access to the archive as unrestricted permission to redistribute third-party content.
 
 The repository's [LICENSE](LICENSE) governs software according to its terms. It does not automatically authorize third-party review redistribution, proprietary service access, or use of non-public source materials.
 
