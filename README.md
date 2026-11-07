@@ -108,12 +108,12 @@ The following are **results reported in the manuscript**, under the study's spec
 | Modeled indicator | Reported illustration | How to read it |
 |---|---|---|
 | **Cultural sustainability** | Business-as-usual cultural index reaches an assumed threshold of **60 around 2031** | An index-based cultural benchmark, not an observed ecological tipping point |
-| **Visitor activity** | Business-as-usual reaches an assumed **2,752 visitors/day** operational benchmark **around 2039** | An operational modeling reference, not an independently established ecological carrying capacity |
+| **Visitor activity** | Business-as-usual reaches an assumed **2,752 visitors/day** operational benchmark **in August 2038** | An operational modeling reference, not an independently established ecological carrying capacity |
 | **Waste management** | Intervention capacity rises toward approximately **2,639 kg/day** in the displayed scenario | Depends on the assumed sanitation-capacity expansion mechanism |
 | **Facility investment** | A modeled facility-capacity trajectory approaches a specified reference of **3,500** | The numerical capacity setting is not proof of ecological sustainability |
 | **Vendor management** | An intervention illustration limits the modeled vendor count to **450** | A scenario setting, not an evidence-based official quota |
 
-**Important distinction:** the cultural threshold near 2031 and the operational visitor benchmark near 2039 describe **different constructs**. Their dates cannot be subtracted to establish a verified “ecological warning window.” Not all figures in manuscript versions correspond exactly to the checked-in code revisions.
+**Important distinction:** the cultural threshold near 2031 and the operational visitor benchmark in August 2038 describe **different constructs**. Their dates cannot be subtracted to establish a verified “ecological warning window.” Not all figures in manuscript versions correspond exactly to the checked-in code revisions.
 
 ### What is compared?
 
