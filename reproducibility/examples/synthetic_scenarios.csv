@@ -1,0 +1,7 @@
+date,scenario,value
+2023-01-01,synthetic_bau,100
+2024-01-01,synthetic_bau,125
+2025-01-01,synthetic_bau,150
+2023-01-01,synthetic_intervention,100
+2024-01-01,synthetic_intervention,115
+2025-01-01,synthetic_intervention,128
