@@ -44,3 +44,7 @@ Outputs under `reproducibility/outputs/source-grounded/` contain observed-aggreg
 - **Pending empirical source needs**: observed garbage generation/handling, facility capacity units, cultural index, visitor-service quality, informal-vendor income, and historical calibration series.
 
 **No claim of full seven-subsystem correction or figure replication is made by stage 1.**
+
+## Stage-2 legacy notebook MAPE safety patch
+
+The seven root notebooks' former historical-fit MAPE code cells have been changed to print **EMPIRICAL MAPE NOT COMPUTABLE**, with the corresponding MAPE variables set to `NaN`. This prevents hard-coded examples, unmeasured indices, or unlike variables from being emitted as independently validated model errors. The original cells and old figures can be inspected at the pre-audit commit SHA documented above. This is **not** a recalculation of the study's MAPE; independent data and unit-consistent model outputs are still required.
