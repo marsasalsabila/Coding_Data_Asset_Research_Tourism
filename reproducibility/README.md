@@ -46,3 +46,14 @@ All data files inside `examples/` are **synthetic demonstration data**. Passing 
 - Do not describe seven individual numerical subsystem scripts as one fully coupled implementation.
 - The cultural index of 60 and operational visitor benchmark of 2,752 visitors/day are distinct.
 - Figure versions, input files, and date ranges must be confirmed before claiming precise plot replication.
+
+## Bromo source audit — reproducible provisional outputs (11 Nov 2026)
+
+The source values are documented in [BROMO_SOURCE_AUDIT_2026-11-11.md](docs/BROMO_SOURCE_AUDIT_2026-11-11.md).
+To generate CSVs plus a new illustrative visitor figure:
+
+```bash
+python reproducibility/scripts/source_grounded_bromo_scenario.py
+```
+
+GitHub Actions on the audit branch runs this script in addition to unit tests and publishes an artifact named `bromo-source-grounded-provisional` containing the figure and CSV exports. This artifact does **not** establish reproducibility of Figures 5–8, MAPE 6.45%, or ecological threshold crossing.
