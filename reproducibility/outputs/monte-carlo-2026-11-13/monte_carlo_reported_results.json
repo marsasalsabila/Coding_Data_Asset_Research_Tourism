@@ -1,0 +1,96 @@
+{
+  "analysis": "ASSUMPTION-CONDITIONED MONTE CARLO; NOT EMPIRICALLY CALIBRATED",
+  "seed": 20261113,
+  "n": 10000,
+  "period": "2025-2045",
+  "thresholds": {
+    "annual_mean_admissions_per_day": 2752,
+    "culture_index_end_year": 60
+  },
+  "distributions": {
+    "triangular": {
+      "bau_visitor": {
+        "crossed_by_2045": 10000,
+        "not_crossed_by_2045": 0,
+        "within_assumed_sample_crossing_fraction": 1,
+        "crossing_year_quantiles_conditional": {
+          "p05": 2039,
+          "median": 2040,
+          "p95": 2042
+        }
+      },
+      "intervention_visitor": {
+        "crossed_by_2045": 824,
+        "not_crossed_by_2045": 9176,
+        "within_assumed_sample_crossing_fraction": 0.0824,
+        "crossing_year_quantiles_conditional": {
+          "p05": 2045,
+          "median": 2045,
+          "p95": 2045
+        }
+      },
+      "bau_culture": {
+        "crossed_by_2045": 10000,
+        "not_crossed_by_2045": 0,
+        "within_assumed_sample_crossing_fraction": 1,
+        "crossing_year_quantiles_conditional": {
+          "p05": 2031,
+          "median": 2032,
+          "p95": 2034
+        }
+      },
+      "intervention_culture": {
+        "crossed_by_2045": 1162,
+        "not_crossed_by_2045": 8838,
+        "within_assumed_sample_crossing_fraction": 0.1162,
+        "crossing_year_quantiles_conditional": {
+          "p05": 2039,
+          "median": 2043,
+          "p95": 2045
+        }
+      }
+    },
+    "uniform": {
+      "bau_visitor": {
+        "crossed_by_2045": 10000,
+        "not_crossed_by_2045": 0,
+        "within_assumed_sample_crossing_fraction": 1,
+        "crossing_year_quantiles_conditional": {
+          "p05": 2039,
+          "median": 2040,
+          "p95": 2042
+        }
+      },
+      "intervention_visitor": {
+        "crossed_by_2045": 1933,
+        "not_crossed_by_2045": 8067,
+        "within_assumed_sample_crossing_fraction": 0.1933,
+        "crossing_year_quantiles_conditional": {
+          "p05": 2045,
+          "median": 2045,
+          "p95": 2045
+        }
+      },
+      "bau_culture": {
+        "crossed_by_2045": 10000,
+        "not_crossed_by_2045": 0,
+        "within_assumed_sample_crossing_fraction": 1,
+        "crossing_year_quantiles_conditional": {
+          "p05": 2031,
+          "median": 2032,
+          "p95": 2034
+        }
+      },
+      "intervention_culture": {
+        "crossed_by_2045": 1978,
+        "not_crossed_by_2045": 8022,
+        "within_assumed_sample_crossing_fraction": 0.1978,
+        "crossing_year_quantiles_conditional": {
+          "p05": 2037,
+          "median": 2041,
+          "p95": 2045
+        }
+      }
+    }
+  }
+}
