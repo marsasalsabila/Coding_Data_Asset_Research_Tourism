@@ -57,3 +57,19 @@ python reproducibility/scripts/source_grounded_bromo_scenario.py
 ```
 
 GitHub Actions on the audit branch runs this script in addition to unit tests and publishes an artifact named `bromo-source-grounded-provisional` containing the figure and CSV exports. This artifact does **not** establish reproducibility of Figures 5–8, MAPE 6.45%, or ecological threshold crossing.
+
+## 13 November 2026 — assumption-conditioned Monte Carlo (R4.1)
+
+A separate **10,000-draw, fixed-seed Monte Carlo stress test** now samples **hypothetical independent triangular ranges** around Fig. 6a annual-average admissions and Fig. 8b cultural-index bookkeeping. Uniform-range reruns assess distribution-shape sensitivity. This is **not a Monte Carlo replay of an authenticated coupled seven-subsystem system or an empirical confidence interval**.
+
+- [Method, parameter bounds, results, caveats and manuscript changes](docs/BROMO_MONTE_CARLO_2026-11-13.md)
+- [Executable code](scripts/bromo_monte_carlo_assumptions.py)
+- [Jupyter notebook](notebooks/ATR_Bromo_Monte_Carlo_2026-11-13.ipynb)
+- [Machine-readable executed summary](outputs/monte-carlo-2026-11-13/monte_carlo_reported_results.json)
+
+```bash
+python reproducibility/scripts/bromo_monte_carlo_assumptions.py --n 10000 --seed 20261113 --distribution triangular
+python reproducibility/scripts/bromo_monte_carlo_assumptions.py --n 10000 --seed 20261113 --distribution uniform --output-dir reproducibility/outputs/monte-carlo-uniform
+```
+
+The approved **deterministic** Section 4.7 25-case grid (2038–2043) varies the operational benchmark as well as growth. The Monte Carlo primary benchmark is **fixed at 2,752 annual-average admissions per day**, so the reported BAU 2039–2042 conditional percentile range has a different scope.
