@@ -18,6 +18,8 @@
 
 ---
 
+> **Source-data correction (11 November 2026):** [Read the audited Bromo source register](reproducibility/docs/BROMO_SOURCE_AUDIT_2026-11-11.md) and [run the new provisional annual-mean scenario](reproducibility/scripts/source_grounded_bromo_scenario.py). Seven legacy notebooks are **not yet fully corrected or independently validated**. Their embedded figures remain **stale** after the input correction. Do not reuse historical MAPE 6.45% as independently reproduced evidence.
+
 ## 🔎 What is this research about?
 
 Tourism creates jobs and local income. It can also place pressure on public infrastructure, environmental resources, cultural practices, and the lives of people who call a destination home.
@@ -236,7 +238,7 @@ The authors acknowledge Telkom University, the participating experts, and the op
 
 ## 🔐 Data ethics and reuse
 
-The repository includes `final_data_for_25_destinations_with_coordinates.zip`. **Review-text sharing and reuse remain subject to source-platform terms, permissions, and privacy considerations.** Do not interpret public access to the archive as unrestricted permission to redistribute third-party content.
+The repository includes `ATR_PUBLIC_AGGREGATES_ONLY.zip`. **Review-text sharing and reuse remain subject to source-platform terms, permissions, and privacy considerations.** Do not interpret public access to the archive as unrestricted permission to redistribute third-party content.
 
 The repository's [LICENSE](LICENSE) governs software according to its terms. It does not automatically authorize third-party review redistribution, proprietary service access, or use of non-public source materials.
 
