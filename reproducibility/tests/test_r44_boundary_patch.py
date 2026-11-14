@@ -100,15 +100,14 @@ def run_engine(prefix,intervention,patched,caseid=None):
             ns["end_date"]=ns["start_date"]
             code=code.replace("curr_dom_bau, curr_man_bau = dom_2023 / 365, man_2023 / 365", "curr_dom_bau, curr_man_bau = 0.0, 0.0",1)
     exec(code,ns)
-    # Numeric outputs as built by original engines.
-    if prefix=="P":return [ns["total_bau"][-1],ns["total_int"][-1]] if intervention else [ns["history_populasi"][-1],ns["history_reputasi"][-1]]
-    if prefix=="W":return [ns["data_timbulan"][-1],ns["data_pembersihan"][-1],ns.get("data_stock",[0])[-1] if not intervention else ns["data_kapasitas_int"][-1]]
-    if prefix=="R":return [ns["rev_bau_daily"][-1],ns["rev_int_daily"][-1]] if intervention else [ns["data_revenue_daily"][-1]]
-    if prefix=="F":return [ns["data_vis_int"][-1],ns["data_cap_int"][-1]] if intervention else [ns["data_visitors"][-1],ns["data_kapasitas"][-1]]
-    if prefix=="S":return [ns["data_indeks_bau"][-1],ns["data_indeks_int"][-1]]
-    if prefix=="C":return [ns["data_culture_bau"][-1],ns["data_culture_int"][-1]]
-    if prefix=="E":return [ns["data_pkl_int"][-1],ns["data_inc_int"][-1]] if intervention else [ns["data_pkl_bau"][-1],ns["data_inc_bau"][-1]]
-    raise AssertionError(prefix)
+    # Compare all numeric daily output series rather than assuming common array names.
+    outputs={}
+    for key,value in ns.items():
+        if isinstance(value,list) and len(value)==ns["days"] and all(isinstance(x,(int,float)) for x in value):
+            outputs[key]=value
+    if not outputs:
+        raise AssertionError("No daily numerical outputs found: "+prefix)
+    return outputs
 
 class R44BoundaryPatchEvaluation(unittest.TestCase):
     def test_original_baselines_unchanged(self):
@@ -118,8 +117,8 @@ class R44BoundaryPatchEvaluation(unittest.TestCase):
                 try:
                     original=run_engine(prefix,intervention,False)
                     corrected=run_engine(prefix,intervention,True)
-                    same=all(math.isclose(a,b,rel_tol=1e-12,abs_tol=1e-9) for a,b in zip(original,corrected))
-                    print("R44_BASELINE "+json.dumps({"prefix":prefix,"intervention":intervention,"original":original,"patched":corrected,"same":same}),flush=True)
+                    same=original==corrected
+                    print("R44_BASELINE "+json.dumps({"prefix":prefix,"intervention":intervention,"series":sorted(original.keys()),"last_original":{k:v[-1] for k,v in original.items()},"last_patched":{k:v[-1] for k,v in corrected.items()},"same":same}),flush=True)
                     self.assertTrue(same)
                     count+=1
                 except Exception as e:
@@ -129,9 +128,11 @@ class R44BoundaryPatchEvaluation(unittest.TestCase):
     def test_boundary_stress_cases_after_patch(self):
         for cid,prefix,intervention in [("P03","P",False),("F03","F",True),("S03","S",False),("E01","E",False)]:
             val=run_engine(prefix,intervention,True,caseid=cid)
-            print("R44_PATCHED_EXTREME "+json.dumps({"case_id":cid,"outputs":val,"finite":all(math.isfinite(v) for v in val)}),flush=True)
-            self.assertTrue(all(math.isfinite(v) for v in val))
-            if cid=="E01":self.assertEqual(val[0],0.0)
-            if cid=="S03":self.assertLess(val[0],71.2)
+            last={k:v[-1] for k,v in val.items()}
+            finite=all(math.isfinite(v) for series in val.values() for v in series)
+            print("R44_PATCHED_EXTREME "+json.dumps({"case_id":cid,"last":last,"finite":finite}),flush=True)
+            self.assertTrue(finite)
+            if cid=="E01":self.assertEqual(last["data_pkl_bau"],0.0)
+            if cid=="S03":self.assertLess(last["data_indeks_bau"],71.2)
 if __name__ == "__main__":
     unittest.main(verbosity=2)
