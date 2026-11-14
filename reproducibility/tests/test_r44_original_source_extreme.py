@@ -47,7 +47,7 @@ CASE_DESIGNS = [
     ("C03","C",False,30,{"initial_stock_anggaran":1e18}, "Extremely high budget", "Culture index bounded at 100"),
     ("E01","E",False,1,{"visitors_init":"zero","initial_pkl":0}, "Zero visitors and zero starting vendors", "No spontaneous vendor creation"),
     ("E02","E",False,30,{"visitors_init":"zero","initial_pkl":200}, "Zero visitors, 200 vendors", "Gross revenue zero, vendors decrease"),
-    ("E03","E",True,30,{"visitors_init":"high","kuota_maksimal_pkl":450}, "100-fold visitors and vendor quota", "Vendors at most 450, receipts finite"),
+    ("E03","E",True,1128,{"visitors_init":"high","kuota_maksimal_pkl":450}, "100-fold visitors and vendor quota, full 2023-2026 warm-up", "Vendors at most 450, receipts finite"),
 ]
 VIS_BAU = "curr_dom_bau, curr_man_bau = dom_2023 / 365, man_2023 / 365"
 VIS_INT = "curr_dom_int, curr_man_int = dom_2023 / 365, man_2023 / 365"
@@ -75,7 +75,9 @@ def run_case(row):
     ns={"__name__":"__r44_test__"}
     exec(compile(cell(nb,0),str(p)+":cell0","exec"),ns)
     exec(compile(cfg,str(p)+":config","exec"),ns)
-    ns["start_date"]=date(2026 if intervention else 2025,1,1)
+    # The 2026 intervention branch uses a growth value initialized in prior years.
+    # Preserve 2023-2025 warm-up when testing the intervention vendor cap.
+    ns["start_date"]=date(2023,1,1) if caseid=="E03" else date(2026 if intervention else 2025,1,1)
     ns["end_date"]=ns["start_date"]+timedelta(days=days-1)
     ns["days"]=days
     notes=[]
