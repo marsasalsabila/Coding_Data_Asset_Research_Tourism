@@ -95,6 +95,13 @@ def run_case(row):
                 if old in code:
                     code=code.replace(old,old.split("=")[0]+"= "+repl,1)
                     found+=1
+            # Some original notebooks initialize domestic and foreign stocks on separate lines.
+            domval,foreignval=[x.strip() for x in repl.split(",")]
+            for var,value in (("curr_dom_bau",domval),("curr_man_bau",foreignval),("curr_dom_int",domval),("curr_man_int",foreignval)):
+                old=var+" = "+("dom_2023" if "dom" in var else "man_2023")+" / 365"
+                if old in code:
+                    code=code.replace(old,var+" = "+value,1)
+                    found+=1
             assert found>=1,(caseid,"visitor assignment not found",code[:400])
             notes.append("in-memory visitor initial-state override to "+v+" ("+str(found)+" assignments)")
         else:
