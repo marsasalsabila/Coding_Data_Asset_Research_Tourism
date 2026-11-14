@@ -1,26 +1,27 @@
-# Figure-to-code crosswalk
+# Figure-to-code crosswalk — revision of 14 November 2026
 
-This table indicates which **existing** notebooks are relevant when inspecting outputs discussed in the manuscript. It does not assert that the checked-in notebook revision exactly generated a particular published figure.
+This table describes the **current manuscript revision**. The seven original root-level subsystem notebooks have been preserved as legacy source artifacts and should not be described as a single coupled implementation. The revised Figures 6–8 come from separate, explicitly parameterized Python scenario notebooks delivered in the research team's **sanitized reproducibility evidence package**. These four latest notebooks are **not yet present on this GitHub branch**, so the repository alone does not reproduce all revised figures.
 
-| Manuscript item | Relevant artifact | Required check |
+| Manuscript item | Source and status | Required interpretation |
 |---|---|---|
-| Figure 1: research workflow | Manuscript methods | Schematic, not a numerical notebook output |
-| Figure 2: BERTopic results | `BERTopic.ipynb` | Topic representations, preprocessing, clustering settings, and source review identifiers |
-| Figure 3: causal loop diagram | Conceptual Vensim diagram | Diagram source and directed-link provenance |
-| Figure 4: stock-and-flow diagram | Conceptual Vensim diagram | Structure is not a complete coupled numerical solver |
-| Figure 5: historical MAPE | Seven subsystem notebooks | Identify reference observations, baseline alignment and aggregation procedure |
-| Figure 6a: visitor activity | `Tourist_Population_Subsystem.ipynb` | Confirm visitor variable, operational 2,752/day benchmark and plotted date |
-| Figure 6b: waste management | `Environmental_Sanitation_Subsystem.ipynb` | Confirm handling-capacity series, starting capacity, budget growth and final observation |
-| Figure 7a: tourism revenue | `Tourism_Revenue_Subsystem.ipynb` | Match tariff inputs, annual receipts and graph's exact ending year |
-| Figure 7b: facility capacity | `Tourism_Facilities_Availability_Subsystem.ipynb` | Identify unit conversion and distinguish modeled facility capacity from admissions |
-| Figure 8a: service quality | `Tourism_Services_Subsystem.ipynb` | Confirm index definition, ceiling of 100, and temporal trajectory |
-| Figure 8b: cultural sustainability | `Cultural_Preservation_Subsystem.ipynb` | Confirm the assumed cultural-index threshold of 60 and crossing date |
-| Figure 8c: vendors and income | `Economic_Subsystem_of_the_Local_Community_in_the_Tourism_Sector.ipynb` | Confirm vendor population, income scale and quota settings |
+| Fig. 1: research workflow | Schematic / Methods | Themes feed conceptual mapping, not Bromo numerical parameter estimation |
+| Fig. 2: topic model | `BERTopic.ipynb` | Topic representations and source corpus must be checked |
+| Fig. 3: causal-loop diagram | Vensim diagram | 26 original candidate links and six later explanatory connectors, see Supplementary S3.6 |
+| Fig. 4: stock-and-flow | Vensim diagram | Conceptual diagram, not an executable fully coupled simulation |
+| Fig. 5: recorded observations | Historical Bromo source records | Observed 2023–2024 admissions and non-tax state revenue, **not a MAPE plot** |
+| Fig. 6: visitor admissions / waste | `ATR_Fig6_Socioecological_Executed.ipynb` in separate reproduction bundle | Annual-mean admissions and assumed 0.5 kg/admission waste rate, not a legacy population-stock rerun |
+| Fig. 7: ticket receipts / facilities | `ATR_Fig7_Revenue_Facilities_Executed.ipynb` in separate bundle | Hypothetical gross receipts and model-equivalent facility capacity, not observed PNBP or authorized budgets |
+| Fig. 8: service / culture / vendors | `ATR_Fig8_Sociocultural_Economy_Executed.ipynb` in separate bundle | Separate assumptions for service/culture/vendor dynamics, not empirically validated site indicators |
+| Supplemental Monte Carlo | `ATR_Bromo_Monte_Carlo_Executed.ipynb` in separate bundle and `reproducibility/scripts/bromo_monte_carlo_assumptions.py` | Assumption-conditioned 10,000 runs, seed 20261113. Bounds are not calibrated confidence intervals |
 
-## Important distinctions
+## Current 2026 revision
 
-- The cultural-index date near 2031 is not an ecosystem-health 80% crossing date.
-- The operational visitor threshold in August 2038 is not independently established ecological carrying capacity.
-- Seven independently simulated subsystems should not be described as a single coupled numerical solver.
-- Figure endpoints showing 2046 and available daily notebook output ending in 2045 require version matching before reporting exact replication.
-- Extracted PNGs from notebooks can be compared to published figures using `scripts/export_notebook_pngs.py`, but visual similarity alone is not numerical reproducibility.
+- The annual-average visitor-demand BAU series first reaches the assumed **2,752 admissions/day** operational reference in **2040**.
+- The separately modeled cultural index first falls below the assumed **60** threshold at **year-end 2032**.
+- Earlier values around **2031** and **August 2038** relate to other, earlier scenario versions or variable definitions. They should not be substituted for the current 2032/2040 claims.
+- A seven-subsystem original-equation extreme-input test was carried out separately. In the original code, 17 of 21 cases passed and four revealed edge-case limitations. Candidate in-memory guards were tested without changing the original notebooks.
+- Monte Carlo inputs have assumed independent bounded variation. Crossing times are conditional outcomes, not field forecasts.
+
+## Replication boundary
+
+The current manuscript's figure-specific notebooks and CSVs are archived in the author's separate submission package. They must be published or attached with their exact SHA-256 hashes, dependency versions, and output comparison before this GitHub repository itself can be described as a complete public reproduction path. Do not infer this from the repository status badge or original notebook presence.
