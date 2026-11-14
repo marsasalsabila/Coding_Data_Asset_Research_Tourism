@@ -101,7 +101,7 @@ def run_engine(prefix,intervention,patched,caseid=None):
             code=code.replace("curr_dom_bau, curr_man_bau = dom_2023 / 365, man_2023 / 365", "curr_dom_bau, curr_man_bau = 0.0, 0.0",1)
     exec(code,ns)
     # Numeric outputs as built by original engines.
-    if prefix=="P":return [ns["history_populasi"][-1],ns["history_reputasi"][-1]]
+    if prefix=="P":return [ns["total_bau"][-1],ns["total_int"][-1]] if intervention else [ns["history_populasi"][-1],ns["history_reputasi"][-1]]
     if prefix=="W":return [ns["data_timbulan"][-1],ns["data_pembersihan"][-1],ns.get("data_stock",[0])[-1] if not intervention else ns["data_kapasitas_int"][-1]]
     if prefix=="R":return [ns["rev_bau_daily"][-1],ns["rev_int_daily"][-1]] if intervention else [ns["data_revenue_daily"][-1]]
     if prefix=="F":return [ns["data_vis_int"][-1],ns["data_cap_int"][-1]] if intervention else [ns["data_visitors"][-1],ns["data_kapasitas"][-1]]
