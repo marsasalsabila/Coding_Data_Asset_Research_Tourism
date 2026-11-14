@@ -107,13 +107,13 @@ The following are **results reported in the manuscript**, under the study's spec
 
 | Modeled indicator | Reported illustration | How to read it |
 |---|---|---|
-| **Cultural sustainability** | Business-as-usual cultural index reaches an assumed threshold of **60 around 2031** | An index-based cultural benchmark, not an observed ecological tipping point |
-| **Visitor activity** | Business-as-usual reaches an assumed **2,752 visitors/day** operational benchmark **in August 2038** | An operational modeling reference, not an independently established ecological carrying capacity |
+| **Cultural sustainability** | In the revised annual-mean manuscript-aligned scenario, business-as-usual cultural index first falls below the assumed threshold **60 in 2032** | An index-based cultural benchmark, not an observed ecological tipping point |
+| **Visitor activity** | In the revised annual-average visitor-demand scenario, business-as-usual first reaches the assumed **2,752 admissions/day** operational reference **in 2040** | An operational modeling reference, not an independently established ecological carrying capacity |
 | **Waste management** | Intervention capacity rises toward approximately **2,639 kg/day** in the displayed scenario | Depends on the assumed sanitation-capacity expansion mechanism |
 | **Facility investment** | A modeled facility-capacity trajectory approaches a specified reference of **3,500** | The numerical capacity setting is not proof of ecological sustainability |
 | **Vendor management** | An intervention illustration limits the modeled vendor count to **450** | A scenario setting, not an evidence-based official quota |
 
-**Important distinction:** the cultural threshold near 2031 and the operational visitor benchmark in August 2038 describe **different constructs**. Their dates cannot be subtracted to establish a verified “ecological warning window.” Not all figures in manuscript versions correspond exactly to the checked-in code revisions.
+**Version note (14 November 2026):** the current revision's separate annual-average model yields a cultural index crossing in **2032** and a visitor-admissions operational reference crossing in **2040**. Earlier 2031 and August 2038 values belong to superseded or differently defined modeling versions. These events measure distinct constructs and must not be combined into an empirically verified ecological warning interval. The seven original subsystem notebooks are preserved as a legacy computational record. Manuscript Figures 6–8 and the later Monte Carlo analysis use separately specified scenario calculations, not a fully coupled run of the seven legacy notebooks.
 
 ### What is compared?
 
@@ -194,6 +194,9 @@ python reproducibility/scripts/find_crossings.py \
 ```
 
 **The example CSV files are synthetic teaching fixtures**, not observations from Bromo and not the basis for the published results.
+
+
+> **Reproduction scope:** The original seven subsystem notebooks remain at the repository root. The current manuscript Figures 6–8 and Monte Carlo scenario notebooks are separate, executed research artifacts. Their sanitized source notebooks, output CSVs and Monte Carlo dependency script are included in the authors' manuscript revision evidence package. Until these additional notebooks are explicitly uploaded and versioned on this repository, readers should not assume that the root notebooks regenerate all current manuscript figures.
 
 ## 🔬 Reproducibility and research checks
 
