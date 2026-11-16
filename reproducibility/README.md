@@ -46,3 +46,17 @@ All data files inside `examples/` are **synthetic demonstration data**. Passing 
 - Do not describe seven individual numerical subsystem scripts as one fully coupled implementation.
 - The cultural index of 60 and operational visitor benchmark of 2,752 visitors/day are distinct.
 - Figure versions, input files, and date ranges must be confirmed before claiming precise plot replication.
+
+
+## Executed manuscript scenario notebooks (public main branch, added 16 November 2026)
+
+The original seven root-level subsystem notebooks are preserved separately. The following **additional** executed Python notebooks document the revised exploratory scenario figures and uncertainty analysis:
+
+- [Figure 6 — Admissions and waste](notebooks/ATR_Fig6_Socioecological_Executed.ipynb)
+- [Figure 7 — Gross ticket receipts and facilities](notebooks/ATR_Fig7_Revenue_Facilities_Executed.ipynb)
+- [Figure 8 — Services, culture, and vendors](notebooks/ATR_Fig8_Sociocultural_Economy_Executed.ipynb)
+- [Monte Carlo — executed notebook](notebooks/ATR_Bromo_Monte_Carlo_Executed.ipynb)
+- [Monte Carlo — lightweight runner](notebooks/ATR_Bromo_Monte_Carlo_2026-11-13.ipynb)
+- [Monte Carlo — reported results](outputs/monte-carlo-2026-11-13/monte_carlo_reported_results.json)
+
+The notebooks contain saved execution outputs, but independent clean-environment replication and comparison against every submitted image are separate verification steps. See [Figure-to-code crosswalk](docs/FIGURE_CROSSWALK.md) for parameters, caveats, and SHA-256 hashes. The numerical models are separately implemented scenarios, not one fully calibrated whole-system solver.
